@@ -27,6 +27,7 @@ Partial Class MainPage
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AccountSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,16 +55,22 @@ Partial Class MainPage
         '
         'AccountToolStripMenuItem
         '
-        Me.AccountToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogoutToolStripMenuItem})
+        Me.AccountToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountSettingsToolStripMenuItem, Me.LogoutToolStripMenuItem})
         Me.AccountToolStripMenuItem.Name = "AccountToolStripMenuItem"
-        Me.AccountToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.AccountToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AccountToolStripMenuItem.Text = "Account"
         '
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.LogoutToolStripMenuItem.Text = "Logout"
+        '
+        'AccountSettingsToolStripMenuItem
+        '
+        Me.AccountSettingsToolStripMenuItem.Name = "AccountSettingsToolStripMenuItem"
+        Me.AccountSettingsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AccountSettingsToolStripMenuItem.Text = "Account Settings"
         '
         'MainPage
         '
@@ -86,4 +93,5 @@ Partial Class MainPage
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AccountToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AccountSettingsToolStripMenuItem As ToolStripMenuItem
 End Class

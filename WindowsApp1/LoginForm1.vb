@@ -21,6 +21,11 @@ Public Class LoginForm1
             MessageBox.Show("Login successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Hide()
 
+            Dim user As New User(username, password)
+            Module1.LoggedInUser = user
+
+
+
             ' Close the login form (you can also hide it if needed)
             MainPage.Show()
 
@@ -53,6 +58,10 @@ End Class
 Public Class User
     Public Property Username As String
     Public Property Password As String
-    Public Property Fullname As String
-    Public Property Address As String
+
+    ' Constructor that takes parameters for username and password
+    Public Sub New(username As String, password As String)
+        Me.Username = username
+        Me.Password = password
+    End Sub
 End Class

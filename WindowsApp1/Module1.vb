@@ -7,6 +7,7 @@ Module Module1
     Public da As MySqlDataAdapter
     Public rd As MySqlDataReader
     Public db As String
+    Public LoggedInUser As User
 
     ' Method to open the connection
     Public Sub OpenConnection()

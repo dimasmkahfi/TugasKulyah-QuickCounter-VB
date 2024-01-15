@@ -44,7 +44,6 @@ Partial Class ListItems
         Me.Button1.Size = New System.Drawing.Size(82, 80)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Tambah Item"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
@@ -53,8 +52,7 @@ Partial Class ListItems
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(82, 80)
         Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Tambah Item"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.Text = "Hapus Item"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
@@ -63,8 +61,7 @@ Partial Class ListItems
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(82, 80)
         Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Tambah Item"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.Text = "Edit Item"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'ListItems

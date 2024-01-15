@@ -83,7 +83,6 @@ Public Class TransactionLog
 
         ListView1.Columns.Add("Transaction_Type", 120)
         ListView1.Columns.Add("Items_ID", 80)
-        ListView1.Columns.Add("Depot_ID", 80)
         ListView1.Columns.Add("Status", 80)
         ListView1.Columns.Add("Updated_Quantity", 100)
         ListView1.Columns.Add("Create_Date", 120)
@@ -106,7 +105,6 @@ Public Class TransactionLog
             While reader.Read()
                 Dim item As New ListViewItem(reader("Transaction_Type").ToString())
                 item.SubItems.Add(reader("Items_ID").ToString())
-                item.SubItems.Add(reader("Depot_ID").ToString())
                 item.SubItems.Add(reader("Status").ToString())
                 item.SubItems.Add(reader("Updated_Quantity").ToString())
                 item.SubItems.Add(reader("Create_Date").ToString())

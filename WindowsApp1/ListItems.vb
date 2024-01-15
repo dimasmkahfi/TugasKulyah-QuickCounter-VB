@@ -137,6 +137,7 @@ Public Class ListItems
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             Dim itemsID As String = selectedRow.Cells("Items_ID").Value.ToString()
             Dim totalQty As String = selectedRow.Cells("Total_Qty").Value.ToString()
+            UpdateItemsIDByValue(itemsID)
 
             ' Create an instance of the EditItemForm and pass the selected item information
 
@@ -146,6 +147,40 @@ Public Class ListItems
             MessageBox.Show("Please select an item to edit.")
         End If
     End Sub
+    Private Sub UpdateItemsIDByValue(Itemsid As String)
+        ' Get the current Items_ID
+        Dim currentItemsID As String = Itemsid
+
+        ' Create an instance of the UpdateItemsIDForm
+        Dim updateForm As New EditItemForm()
+        updateForm.NewItemsID = currentItemsID
+
+        ' Show the form as a dialog
+
+        If updateForm.ShowDialog() = DialogResult.OK Then
+            ' Get the new Items_ID from the form
+            Dim newItemsID As String = updateForm.NewItemsID
+
+            ' Update the database with the new Items_ID value
+            Try
+                OpenConnection()
+
+                ' Execute the SQL command to update the Items_ID
+                Dim updateCommand As New MySqlCommand($"UPDATE items SET Items_ID = '{newItemsID}' WHERE Items_ID = '{currentItemsID}'", con)
+                updateCommand.ExecuteNonQuery()
+
+                MessageBox.Show($"Items_ID updated successfully to {newItemsID}.")
+            Catch ex As Exception
+                MessageBox.Show($"Error updating Items_ID: {ex.Message}")
+            Finally
+                CloseConnection()
+            End Try
+        Else
+            MessageBox.Show("User Cancelled")
+        End If
+
+    End Sub
+
 
     Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
         Button2.Enabled = DataGridView1.SelectedRows.Count > 0

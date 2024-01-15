@@ -89,6 +89,7 @@ Public Class Dashboard
 
 
     Private Sub Chart1_Click(sender As Object, e As EventArgs) Handles Chart1.Click
+        Chart1.Refresh()
 
     End Sub
 
